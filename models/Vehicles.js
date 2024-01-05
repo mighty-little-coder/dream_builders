@@ -1,13 +1,9 @@
-const { Model, DataTypes } = require('sequelize');
+const { Vehicles, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class User extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class Vehicles extends Model {}
 
-User.init(
+Vehicles.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,39 +11,57 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    year: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: 1900,
+        min: 3000,
+      },
+    },
+    make: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isAlphanumeric: true,
+      },
+    },
+    model: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
+    trim: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+    },
+    vin: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        isAlphanumeric: true,
+      },
+    },
+    color: {
+      type: DataTypes.STRING,
+      allowNull: true,
       unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
-    password: {
+    tire_size: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [8],
-      },
+      allowNull: true,
+    },
+    engine_size: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {
-    hooks: {
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'vehicles',
   }
 );
 
-module.exports = User;
+module.exports = Vehicles;
