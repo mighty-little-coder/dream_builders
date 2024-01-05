@@ -81,3 +81,9 @@ Add backend
     - create view templates
     - CSS
     - design logo
+
+
+For database:
+    - make drop downs for selecting vehicle from API
+    - CarQuery API
+    - practice API requests
