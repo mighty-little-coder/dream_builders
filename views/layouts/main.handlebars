@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechTalk Blog Homepage</title>
+  <link rel="stylesheet" href="/css/jass.css">
+</head>
+
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
+    <h1>
+      TechTalk
+    </h1>
+    <nav>
+      <button class="btn" id="home">Home</button>
+      <button class="btn" id="dashboard">Dashboard</button>
+      {{log logged_in }}
+    <!-- Only display the logout button if the user is logged in -->
+    {{#if logged_in}}
+      <button class="btn" id="logout">Logout</button>
+    {{/if}}
+    </nav>
+  </header>
+  <h3>
+    A tech blog for the tech noob.
+  </h3>
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+
+  </footer>
+
+  <!-- Only include the logout script if the user is logged in -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
