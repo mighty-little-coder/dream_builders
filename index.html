@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grease Monkey</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <h1>Grease Monkey</h1>
+        <button id="signInButton">Sign in</button>
+    </header>
+    <main>
+        <div class="vehicle-input-container">
+            <form id="vehicleForm">
+                <input type="text" id="vehicleInput" placeholder="Enter Vehicle Information" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        document.getElementById('vehicleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const vehicleInfo = document.getElementById('vehicleInput').value;
+
+
+            window.location.href = 'carmaintenance.html';
+        });
+    </script>
+</body>
+</html>
