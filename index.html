@@ -8,8 +8,9 @@
 </head>
 <body>
     <header>
-        <h1>Grease Monkey</h1>
-        <button id="signInButton">Sign in</button>
+        <h1>jtdkutfkjyf</h1>
+        <!-- <button id="signInButton">Sign in</button> -->
+        <a href="/login">Sign in</a>
     </header>
     <main>
         <div class="vehicle-input-container">
@@ -26,6 +27,11 @@
 
 
             window.location.href = 'carmaintenance.html';
+        });
+        document.getElementById('signInButton').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            window.location.replace('/login');
         });
     </script>
 </body>

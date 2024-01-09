@@ -73,3 +73,7 @@ Vehicles.init(
 );
 
 module.exports = Vehicles;
+
+
+// CREATE VEHICLE USING VEHICLE_ID FROM CARQUERY API
+// vehicle.create()
