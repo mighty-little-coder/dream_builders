@@ -36,6 +36,14 @@ Repairs.init(
         type: DataTypes.STRING,
         allowNull: true,
       },
+      vehicle_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'vehicle',
+          key: 'id',
+        },
+        allowNull: false,
+      },
   },
   {
     sequelize,

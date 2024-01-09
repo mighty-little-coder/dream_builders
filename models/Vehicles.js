@@ -1,7 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const apiVehicles = require('../utils/carsqueryapi')
 
-class Vehicles extends Model {}
+class Vehicles extends Model { }
 
 Vehicles.init(
   {
@@ -9,27 +10,26 @@ Vehicles.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
     },
-    year: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        min: 1900,
-        min: 3000,
-      },
-    },
-    make: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isAlphanumeric: true,
-      },
-    },
-    model: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // year: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   validate: {
+    //     min: 1900,
+    //     min: 3000,
+    //   },
+    // },
+    // make: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     isAlphanumeric: true,
+    //   },
+    // },
+    // model: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     trim: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -50,9 +50,17 @@ Vehicles.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    engine_size: {
-      type: DataTypes.STRING,
-      allowNull: true,
+    // engine_size: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+      allowNull: false,
     },
   },
   {
