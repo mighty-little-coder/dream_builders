@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Repairs extends Model {}
+class Repairs extends Model { }
 
 Repairs.init(
   {
@@ -33,17 +33,17 @@ Repairs.init(
       },
     },
     repair_method: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    vehicle_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'vehicle',
+        key: 'id',
       },
-      vehicle_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'vehicle',
-          key: 'id',
-        },
-        allowNull: false,
-      },
+      allowNull: false,
+    },
   },
   {
     sequelize,
