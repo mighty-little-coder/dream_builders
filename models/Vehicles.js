@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const apiVehicles = require('../public/js/carsqueryapi')
+// const apiVehicles = require('../public/js/carsqueryapi')
 
 class Vehicles extends Model { }
 

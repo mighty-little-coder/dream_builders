@@ -114,10 +114,12 @@
 //     getAllCars
 // }
 function loadYears() {
-    fetch('https://www.carqueryapi.com/api/0.3/?cmd=getYears')
+    const url = 'https://corsproxy.io/?' + encodeURIComponent('https://www.carqueryapi.com/api/0.3/?cmd=getYears');
+    fetch(url,
+        { mode: "cors" })
         .then(response => response.json())
         .then(data => {
-            console.log ("data", data)
+            console.log("data", data)
             const yearSelect = document.getElementById('year');
             yearSelect.innerHTML = '<option value="">Select Year</option>';
             for (let year = data.Years.min_year; year <= data.Years.max_year; year++) {
@@ -125,15 +127,16 @@ function loadYears() {
                 option.value = year;
                 option.textContent = year;
                 yearSelect.appendChild(option);
-        }
-        });
+            }
+        })
 }
 
 
 function updateMakes() {
     const yearSelect = document.getElementById('year');
     const selectedYear = yearSelect.value;
-    fetch(`https://www.carqueryapi.com/api/0.3/?cmd=getMakes&year=${selectedYear}`)
+    const url = 'https://corsproxy.io/?' + encodeURIComponent(`https://www.carqueryapi.com/api/0.3/?cmd=getMakes&year=${selectedYear}`);
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             const makeSelect = document.getElementById('make');
@@ -152,7 +155,8 @@ function updateModels() {
     const yearSelect = document.getElementById('year');
     const selectedMake = makeSelect.value;
     const selectedYear = yearSelect.value;
-    fetch(`https://www.carqueryapi.com/api/0.3/?cmd=getModels&make=${selectedMake}&year=${selectedYear}`)
+    const url = 'https://corsproxy.io/?' + encodeURIComponent(`https://www.carqueryapi.com/api/0.3/?cmd=getModels&make=${selectedMake}&year=${selectedYear}`);
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             const modelSelect = document.getElementById('model');
@@ -173,7 +177,8 @@ function updateTrims() {
     const selectedMake = makeSelect.value;
     const selectedModel = modelSelect.value;
     const selectedYear = yearSelect.value;
-    fetch(`https://www.carqueryapi.com/api/0.3/?cmd=getTrims&make=${selectedMake}&model=${selectedModel}&year=${selectedYear}`)
+    const url = 'https://corsproxy.io/?' + encodeURIComponent(`https://www.carqueryapi.com/api/0.3/?cmd=getTrims&make=${selectedMake}&model=${selectedModel}&year=${selectedYear}`);
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             const trimSelect = document.getElementById('trim');
