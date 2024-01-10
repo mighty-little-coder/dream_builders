@@ -29,6 +29,20 @@ router.post('/', async (req, res) => {
   }
 });
 
+//get user by ID
+router.get('/:id', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id)
+    if (!userData) {
+      res.status(404).json({message: 'no user found!'})
+      return;
+    }
+    res.status(200).json(userData)
+  } catch (err) {
+    res.status(500).json({message: 'server error'})
+  }
+})
+
 // Login page
 router.post('/login', async (req, res) => {
   try {
