@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grease Monkey</title>
-    <link rel="stylesheet" href="homepage.css">
+    <title>Car Selection</title>
+    <link rel="stylesheet" href="./public/css/homepage.css">
 </head>
 <body>
     <header>
@@ -15,24 +15,25 @@
     <main>
         <div class="vehicle-input-container">
             <form id="vehicleForm">
-                <input type="text" id="vehicleInput" placeholder="Enter Vehicle Information" required>
+                <select id="year" required>
+                    <option value="">Select Year</option>
+                </select>
+                <select id="make" required>
+                    <option value="">Select Make</option>
+                </select>
+                <select id="model" required>
+                    <option value="">Select Model</option>
+                </select>
+                <select id="trim" required>
+                    <option value="">Select Trim</option>
+                </select>
                 <button type="submit">Submit</button>
             </form>
         </div>
     </main>
-    <script>
-        document.getElementById('vehicleForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const vehicleInfo = document.getElementById('vehicleInput').value;
-
-
-            window.location.href = 'carmaintenance.html';
-        });
-        document.getElementById('signInButton').addEventListener('click', function(event) {
-            event.preventDefault();
-
-            window.location.replace('/login');
-        });
-    </script>
+    <script src="/utils/carsqueryapi.js"></script>
 </body>
 </html>
+
+
+

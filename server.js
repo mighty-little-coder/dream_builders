@@ -39,6 +39,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin (you may want to restrict this to your domain)
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+// sync sequelize models to the database, then turn on the server
 sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on Port ${PORT}`));
 })

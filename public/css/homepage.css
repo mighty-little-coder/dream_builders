@@ -22,6 +22,7 @@ h1 {
     font-size: 2em;
     text-align: center;
     flex-grow: 1;
+    margin-left: 100px;
 }
 
 #signInButton {
@@ -61,15 +62,15 @@ main {
     gap: 10px;
 }
 
-#vehicleInput {
-    padding: 15px;
+#vehicleForm select {
+    padding: 10px;
     font-size: 1rem;
     border: 2px solid #ccc;
     border-radius: 4px;
     transition: border-color 0.3s;
 }
 
-#vehicleInput:focus {
+#vehicleForm select:focus {
     border-color: #007bff;
     outline: none;
 }
