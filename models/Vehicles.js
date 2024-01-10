@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const apiVehicles = require('../utils/carsqueryapi')
+const apiVehicles = require('../public/js/carsqueryapi')
 
 class Vehicles extends Model { }
 
@@ -73,3 +73,7 @@ Vehicles.init(
 );
 
 module.exports = Vehicles;
+
+
+// CREATE VEHICLE USING VEHICLE_ID FROM CARQUERY API
+// vehicle.create()

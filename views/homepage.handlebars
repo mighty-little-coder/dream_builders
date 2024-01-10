@@ -1,5 +1,9 @@
 <h1>Home Page</h1>
-<div class="vehicle-input-container">
+<header>
+        <h1>Grease Monkeys</h1>
+        <a href="/login">Sign in</a>
+    </header>
+    <div class="vehicle-input-container">
             <form id="vehicleForm">
                 <select id="year" required>
                     <option value="">Select Year</option>
@@ -16,4 +20,25 @@
                 <button type="submit">Submit</button>
             </form>
         </div>
-        <script src="/utils/carsqueryapi.js"></script>
+        <script src="/js/carsqueryapi.js"></script>
+
+
+    {{!-- <div class="container">
+        <aside>
+            <nav>
+                <ul id="vehicleList">
+                    <li>Vehicle List</li>
+                    <li class="addVehicle">Add Vehicle</li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <section id="vehicleDetails">
+                <h2>Vehicle Name</h2>
+                <p>Vehicle Status / info</p>
+            </section>
+            <section id="vehicleHistory">
+                <h2>Vehicle History</h2>
+            </section>
+        </main>
+    </div> --}}

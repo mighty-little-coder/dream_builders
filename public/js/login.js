@@ -22,41 +22,16 @@ const loginFormHandler = async (event) => {
   }
 };
 
+const loginBtnHandler = async (event) => {
+  console.log("this is probably working")
+  event.preventDefault();
+  document.location.replace('/login');
+};
 
-/// Verify why we want this code
-// const signupFormHandler = async (event) => {
-//   event.preventDefault();
-  
-//   const name = document.querySelector('#name-signup').value.trim();
-//   const email = document.querySelector('#email-signup').value.trim();
-//   const password = document.querySelector('#password-signup').value.trim();
-  
-//   if (name && email && password) {
-//     const response = await fetch('/api/users/sign-up', {
-//       method: 'POST',
-//       body: JSON.stringify({ name, email, password }),
-//       headers: { 'Content-Type': 'application/json' },
-//     });
-    
-//     if (response.ok) {
-//       document.location.replace('/home');
-//     } else {
-//       alert(response.statusText);
-//     }
-//   }
-// };
+var loginBtn = document.querySelector('#login')
+if (loginBtn != null)
+  loginBtn.addEventListener('click', loginBtnHandler);
 
-// const homeLogin = () => {
-//   console.log('testing')
-//   document.location.replace('/login')
-// };
-
-// document.querySelector('#login-navbar').addEventListener('click', homeLogin);
-
-// document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-
-// document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
-
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+var loginForm = document.querySelector('.login-form')
+if (loginForm != null)
+  loginForm.addEventListener('submit', loginFormHandler);
