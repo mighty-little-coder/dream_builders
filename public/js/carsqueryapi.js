@@ -118,78 +118,78 @@ function loadYears() {
         .then(response => response.json())
         .then(data => {
             console.log ("data", data)
-            // const yearSelect = document.getElementById('year');
-            // yearSelect.innerHTML = '<option value="">Select Year</option>';
-            // for (let year = data.Years.min_year; year <= data.Years.max_year; year++) {
-            //     const option = document.createElement('option');
-            //     option.value = year;
-            //     option.textContent = year;
-            //     yearSelect.appendChild(option);
-        // }
+            const yearSelect = document.getElementById('year');
+            yearSelect.innerHTML = '<option value="">Select Year</option>';
+            for (let year = data.Years.min_year; year <= data.Years.max_year; year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearSelect.appendChild(option);
+        }
         });
 }
-console.log("loadYears", loadYears())
 
-// function updateMakes() {
-//     const yearSelect = document.getElementById('year');
-//     const selectedYear = yearSelect.value;
-//     fetch(`https://www.carqueryapi.com/api/0.3/?cmd=getMakes&year=${selectedYear}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             const makeSelect = document.getElementById('make');
-//             makeSelect.innerHTML = '<option value="">Select Make</option>';
-//             data.Makes.forEach(make => {
-//                 const option = document.createElement('option');
-//                 option.value = make.make_id;
-//                 option.textContent = make.make_display;
-//                 makeSelect.appendChild(option);
-//             });
-//         });
-// }
 
-// function updateModels() {
-//     const makeSelect = document.getElementById('make');
-//     const yearSelect = document.getElementById('year');
-//     const selectedMake = makeSelect.value;
-//     const selectedYear = yearSelect.value;
-//     fetch(`https://www.carqueryapi.com/api/0.3/?cmd=getModels&make=${selectedMake}&year=${selectedYear}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             const modelSelect = document.getElementById('model');
-//             modelSelect.innerHTML = '<option value="">Select Model</option>';
-//             data.Models.forEach(model => {
-//                 const option = document.createElement('option');
-//                 option.value = model.model_name;
-//                 option.textContent = model.model_name;
-//                 modelSelect.appendChild(option);
-//             });
-//         });
-// }
+function updateMakes() {
+    const yearSelect = document.getElementById('year');
+    const selectedYear = yearSelect.value;
+    fetch(`https://www.carqueryapi.com/api/0.3/?cmd=getMakes&year=${selectedYear}`)
+        .then(response => response.json())
+        .then(data => {
+            const makeSelect = document.getElementById('make');
+            makeSelect.innerHTML = '<option value="">Select Make</option>';
+            data.Makes.forEach(make => {
+                const option = document.createElement('option');
+                option.value = make.make_id;
+                option.textContent = make.make_display;
+                makeSelect.appendChild(option);
+            });
+        });
+}
 
-// function updateTrims() {
-//     const makeSelect = document.getElementById('make');
-//     const modelSelect = document.getElementById('model');
-//     const yearSelect = document.getElementById('year');
-//     const selectedMake = makeSelect.value;
-//     const selectedModel = modelSelect.value;
-//     const selectedYear = yearSelect.value;
-//     fetch(`https://www.carqueryapi.com/api/0.3/?cmd=getTrims&make=${selectedMake}&model=${selectedModel}&year=${selectedYear}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             const trimSelect = document.getElementById('trim');
-//             trimSelect.innerHTML = '<option value="">Select Trim</option>';
-//             data.Trims.forEach(trim => {
-//                 const option = document.createElement('option');
-//                 option.value = trim.model_trim;
-//                 option.textContent = trim.model_trim || 'Standard';
-//                 trimSelect.appendChild(option);
-//             });
-//         });
-// }
+function updateModels() {
+    const makeSelect = document.getElementById('make');
+    const yearSelect = document.getElementById('year');
+    const selectedMake = makeSelect.value;
+    const selectedYear = yearSelect.value;
+    fetch(`https://www.carqueryapi.com/api/0.3/?cmd=getModels&make=${selectedMake}&year=${selectedYear}`)
+        .then(response => response.json())
+        .then(data => {
+            const modelSelect = document.getElementById('model');
+            modelSelect.innerHTML = '<option value="">Select Model</option>';
+            data.Models.forEach(model => {
+                const option = document.createElement('option');
+                option.value = model.model_name;
+                option.textContent = model.model_name;
+                modelSelect.appendChild(option);
+            });
+        });
+}
 
-// document.addEventListener('DOMContentLoaded', loadYears);
-// document.getElementById('year').addEventListener('change', updateMakes);
-// document.getElementById('make').addEventListener('change', updateModels);
-// document.getElementById('model').addEventListener('change', updateTrims);
+function updateTrims() {
+    const makeSelect = document.getElementById('make');
+    const modelSelect = document.getElementById('model');
+    const yearSelect = document.getElementById('year');
+    const selectedMake = makeSelect.value;
+    const selectedModel = modelSelect.value;
+    const selectedYear = yearSelect.value;
+    fetch(`https://www.carqueryapi.com/api/0.3/?cmd=getTrims&make=${selectedMake}&model=${selectedModel}&year=${selectedYear}`)
+        .then(response => response.json())
+        .then(data => {
+            const trimSelect = document.getElementById('trim');
+            trimSelect.innerHTML = '<option value="">Select Trim</option>';
+            data.Trims.forEach(trim => {
+                const option = document.createElement('option');
+                option.value = trim.model_trim;
+                option.textContent = trim.model_trim || 'Standard';
+                trimSelect.appendChild(option);
+            });
+        });
+}
+
+document.addEventListener('DOMContentLoaded', loadYears);
+document.getElementById('year').addEventListener('change', updateMakes);
+document.getElementById('make').addEventListener('change', updateModels);
+document.getElementById('model').addEventListener('change', updateTrims);
 
 
