@@ -1,4 +1,4 @@
-# Grease Monkey
+# Grease Monkey - Your Car Maintenance Made Easy!
 
 ## Description
 
