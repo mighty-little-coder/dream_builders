@@ -103,7 +103,7 @@ const express = require('express');
 const router = express.Router();
 const { User } = require('../../models');
 // List all users
-router.get('/', async (req, res) => {
+router.get('/user', async (req, res) => {
   try {
     let users = await User.findAll({});
     res.json(users);

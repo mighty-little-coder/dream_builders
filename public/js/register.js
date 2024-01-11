@@ -8,7 +8,7 @@ const registerFormHandler = async (event) => {
 
   if (email && password) {
     // Send the e-mail and password to the server
-    const response = await fetch('/api/users/register', {
+    const response = await fetch('/register', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -39,7 +39,7 @@ document
   
     if (email && password) {
       // Send the e-mail and password to the server
-      const response = await fetch('/api/users/login', {
+      const response = await fetch('/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
