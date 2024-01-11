@@ -57,11 +57,19 @@ router.get('/', withAuth, async (req, res) => {
       selectedVehicle.history = historyData.map(entry => entry.get({ plain: true }));
     }
 
-    res.render('homepage', {
-      vehicles,
-      selectedVehicle,
-      logged_in: req.session.logged_in,
+    // res.render('homepage', {
+    //   vehicles,
+    //   selectedVehicle,
+    //   logged_in: req.session.logged_in,
+    // });
+    app.get('/homepage', (req, res) => {
+      if (req.session.logged_in) {
+        res.render('homepage');
+      } else {
+        res.redirect('/login');
+      }
     });
+    
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
