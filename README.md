@@ -1,33 +1,26 @@
-# Grease Monkey
+# Grease Monkey Maintenance Tracker
 
 ## Description
 
-"Grease Monkey" is an application where the user can quickly and easily search for, diagnose, and log car repairs for any and all vehicles they own. 
+"Grease Monkey" is an application where the user can quickly and easily add, reference, and maintain any and all car repairs and maintenance! Simply login, add your vehicle, and you're well on your way to stress-free car maintenance! 
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+The developers at Grease Monkey Co. know all too well the stresses of maintaining a modern vehicle. We're far too busy, and so are you! That's why we crafted the Grease Monkey Maintenance Tracker to be as easy and efficient to use as possible. Building the application granted us with further practice with Node, Express, MySql, and Handlebars technologies. 
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
-- [Tests](#tests)
 - [How To Contribute](#contribution)
-- [Questions](#questions)
 - [License](#license)
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+No installation necessary.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+The following screenshots showcase the look and feel of the Grease Monkey Maintenance Tracker:
 
     ```md
     ![alt text](assets/images/screenshot.png)
@@ -35,49 +28,29 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Credits to the Grease Monkey Co. Developers:
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+Jeremy Doran | https://github.com/mighty-little-coder
+Lewis Sinche | https://github.com/LewisSin
+Christopher Rice | https://github.com/SnipaMasta
 
-If you followed tutorials, include links to those here as well.
+With assistance from an associate developer: Evan Bennett | https://github.com/Evan8383
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+This application was developed with the MIT License. 
 
 ## Features
 
-If your project has a lot of features, list them here.
+The Grease Monkey Maintenance Tracker features:
+- Live up-to-date tracking of all car maintenance
+- Saving of the user's vehicles to make sure you log the right maintenance for the right vehicle
+- Ability to delete any maintenance item you see fit
 
 ## How to Contribute
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+If any problems arise while using the Grease Monkey Maintenance Tracker, definitely open a new issue or submit a pull request through this repository. Feel free, as well, to contact us via email regarding anything at all about the application!
 
-## Tests
+Our contribution email is: greasemonkey@maintenancetracker.com
 
-
-
-
-Add backend 
-    - models
-    - boiler plate
-    - SQL setup
-    - express setup
-    - API routes
-    - test with insomnia
-        - get route for cars
-        - post route for maintinance
-    - HTML with handlebars inputs
-    - create view templates
-    - CSS
-    - design logo
+Thanks for checking it out~~
