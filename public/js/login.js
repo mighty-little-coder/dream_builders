@@ -46,14 +46,16 @@ const signupFormHandler = async (event) => {
 
   if (email && password) {
     // Send the email and password to the server
-    const response = await fetch('/api/userRoutes.js', {
+    const response = await fetch('/user', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
+      const data = await response.json();
       document.location.replace('/');
+      window.location.href = data.redirectTo; './homepage'
     } else {
       alert('Failed to sign up.');
     }

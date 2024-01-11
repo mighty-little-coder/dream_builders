@@ -45,9 +45,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-app.get('/', (req, res) => {
-  res.render('login')
-});
+// app.get('/', (req, res) => {
+//   res.render('login')
+// });
+// app.get('/homepage', (req, res) => {
+//   if (req.session.logged_in) {
+//     res.render('homepage');
+//   } else {
+//     res.redirect('/login');
+//   }
+// });
+
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin (you may want to restrict this to your domain)

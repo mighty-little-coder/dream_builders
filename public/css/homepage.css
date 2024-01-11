@@ -7,6 +7,7 @@
 body, html {
     height: 100%;
     font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Light gray background */
 }
 
 header {
@@ -14,8 +15,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #eee;
-    border-bottom: 2px solid #ccc;
+    background-color: #007bff; /* Blue header */
+    color: white; /* White text for contrast */
+    border-bottom: 2px solid #0056b3; /* Darker blue border */
 }
 
 h1 {
@@ -28,22 +30,23 @@ h1 {
 #signInButton {
     padding: 10px 20px;
     border: 2px solid transparent;
-    background-color: white;
+    background-color: #f8f9fa; /* Light background */
+    color: #007bff; /* Blue text */
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 #signInButton:hover {
-    border-color: #007bff;
-    background-color: #007bff;
-    color: white;
+    border-color: #0056b3; /* Darker blue border */
+    background-color: #0056b3; /* Darker blue background */
+    color: white; /* White text */
 }
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 80vh; /* Use vh unit for full height */
 }
 
 .vehicle-input-container {
@@ -62,7 +65,9 @@ main {
     gap: 10px;
 }
 
-#vehicleForm select {
+#vehicleForm select,
+#vehicleForm input, /* Style input fields similarly */
+#vehicleForm button {
     padding: 10px;
     font-size: 1rem;
     border: 2px solid #ccc;
@@ -70,14 +75,15 @@ main {
     transition: border-color 0.3s;
 }
 
-#vehicleForm select:focus {
+#vehicleForm select:focus,
+#vehicleForm input:focus /* Consistent focus style */ {
     border-color: #007bff;
     outline: none;
 }
 
 #vehicleForm button {
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: #28a745; /* Green button */
     color: white;
     border: none;
     border-radius: 4px;
@@ -86,5 +92,27 @@ main {
 }
 
 #vehicleForm button:hover {
-    background-color: #0056b3;
+    background-color: #218838; /* Darker green on hover */
 }
+
+/* Additional styles... */
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Full height of the viewport */
+    text-align: center;
+}
+
+.form {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Rest of your styles... */

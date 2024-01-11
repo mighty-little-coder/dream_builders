@@ -122,7 +122,7 @@ router.get('/login', (req, res) => {
 });
 
 // Register a new user
-router.post('/register', async (req, res) => {
+router.post('/api/users/register', async (req, res) => {
   try {
     const newUserData = await User.create({
       email: req.body.email,
@@ -132,7 +132,7 @@ router.post('/register', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = newUserData.id;
       req.session.logged_in = true;
-      
+      res.status(200).json({ message: 'Regristration Successful', redirectTo: '/homepage'});
       res.json({ user: newUserData, message: 'Your account has been created!' });
     });
 
@@ -141,8 +141,9 @@ router.post('/register', async (req, res) => {
   }
 });
 
+
 // User login
-router.post('/login', async (req, res) => {
+router.post('/user/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
@@ -162,7 +163,7 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       
-      res.json({ user: userData, message: 'You are now logged in!' });
+      res.json({ user: userData, message: 'You are now logged in!', redirectTo: '/homepage' });
     });
 
   } catch (err) {
@@ -182,17 +183,17 @@ router.post('/logout', (req, res) => {
 });
 
 // Get user by ID
-router.get('/:id', async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.params.id);
-    if (!userData) {
-      res.status(404).json({message: 'No user found with this ID'});
-      return;
-    }
-    res.status(200).json(userData);
-  } catch (err) {
-    res.status(500).json({message: 'Server error'});
-  }
-});
+// router.get('/:id', async (req, res) => {
+//   try {
+//     const userData = await User.findByPk(req.params.id);
+//     if (!userData) {
+//       res.status(404).json({message: 'No user found with this ID'});
+//       return;
+//     }
+//     res.status(200).json(userData);
+//   } catch (err) {
+//     res.status(500).json({message: 'Server error'});
+//   }
+// });
 
 module.exports = router;
