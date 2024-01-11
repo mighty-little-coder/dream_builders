@@ -119,7 +119,7 @@ function loadYears() {
         { mode: "cors" })
         .then(response => response.json())
         .then(data => {
-            console.log("data", data)
+            // console.log("data", data)
             const yearSelect = document.getElementById('year');
             yearSelect.innerHTML = '<option value="">Select Year</option>';
             for (let year = data.Years.min_year; year <= data.Years.max_year; year++) {

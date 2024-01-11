@@ -2,14 +2,19 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers');
+const routes = require('./controllers/api/userRoutes');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Create a new sequelize store using the express-session package
 const app = express();
 const PORT = process.env.PORT || 3001;
-const hbs = exphbs.create();
+const hbs = exphbs.create({ 
+  extname: '.handlebars',
+  defaultlayout: 'main',
+  layoutsDir: path.join(__dirname, 'views/layouts'),
+  partialsDir: path.join(__dirname, 'views/partials')
+});
 
 // Configure and link a session object with the sequelize store
 const sess = {
@@ -32,6 +37,7 @@ app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -49,3 +55,6 @@ app.use((req, res, next) => {
 sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on Port ${PORT}`));
 })
+
+
+

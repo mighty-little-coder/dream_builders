@@ -8,7 +8,7 @@ const registerFormHandler = async (event) => {
 
   if (email && password) {
     // Send the e-mail and password to the server
-    const response = await fetch('/api/users', {
+    const response = await fetch('/api/users/register', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -50,6 +50,7 @@ document
       } else {
         alert('Failed to log in from login form!');
       }
+      console.log()
     }
   };
   

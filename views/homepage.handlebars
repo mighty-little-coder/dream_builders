@@ -1,5 +1,5 @@
-<h1>Home Page</h1>
-<header>
+
+{{!-- <header>
         <h1>Grease Monkeys</h1>
         <a href="/login">Sign in</a>
         <link rel="stylesheet" href ="/css/homepage.css">
@@ -21,7 +21,7 @@
                 <button type="submit">Submit</button>
             </form>
         </div>
-        <script src="/js/carsqueryapi.js"></script>
+        <script src="/js/carsqueryapi.js"></script> --}}
 
 
     {{!-- <div class="container">
@@ -43,3 +43,38 @@
             </section>
         </main>
     </div> --}}
+
+{{!-- This is the main Handlebars template for your homepage --}}
+{{!-- This assumes you're using the main layout above --}}
+<header>
+    <h1>Grease Monkey</h1>
+    <button id="logOutButton">Log out</button>
+</header>
+<div class="container">
+    <aside>
+        <button id="addVehicleButton">Add a vehicle!</button>
+        <nav>
+            <ul id="vehicleList">
+                {{#each vehicles}}
+                <li>{{this.name}}</li>
+                {{/each}}
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section id="vehicleDetails">
+            <h2>{{selectedVehicle.name}}</h2>
+            <p>{{selectedVehicle.status}}</p>
+        </section>
+        <section id="vehicleHistory">
+            <h2>Vehicle History</h2>
+            <button id="addRepairButton">Add repair!</button>
+            {{#each selectedVehicle.history}}
+            <div class="historyEntry">
+                <span>{{this.repair}} --- {{this.cost}} ------ {{this.method}}</span>
+                <button class="deleteButton">X</button>
+            </div>
+            {{/each}}
+        </section>
+    </main>
+</div>
