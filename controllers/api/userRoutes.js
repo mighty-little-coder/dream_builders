@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
 
 
 // Sign up new user profile
-router.post('/', async (req, res) => {
+router.post('/login', async (req, res) => {
   console.log(req.body)
   try {
     const newUserData = await User.create({
