@@ -1,2 +1,2 @@
 INSERT INTO user (id, email, password)
-VALUES (001, "me@sunfish.com", "krabs");
+VALUES (001 ,"email@email.com", "password")
