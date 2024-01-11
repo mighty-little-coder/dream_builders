@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const { User, Vehicles, Repairs } = require('../../models');
 
-router.get('/', async (req, res) => {
-    let users = await User.findAll({})
-    res.json(users)
-})
+// router.get('/', async (req, res) => {
+//     let users = await User.findAll({})
+//     res.json(users)
+// })
 
 // GET all drivers
 router.get('/', async (req, res) => {

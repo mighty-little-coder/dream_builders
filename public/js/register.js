@@ -15,7 +15,7 @@ const registerFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/info');
+      document.location.replace('/maintain');
       console.log("this is doing the thing it is meant to be doing maybe")
     } else {
       alert('Failed to log in from registration operation!');
@@ -45,7 +45,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/info');
+      document.location.replace('/maintain');
     } else {
       alert('Failed to log in from login form!');
     }

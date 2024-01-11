@@ -1,24 +1,33 @@
-<h1>Home Page</h1>
-<header>
-        <h1>Grease Monkeys</h1>
-        <a href="/login">Sign in</a>
-        <link rel="stylesheet" href="/css/homepage.css">
-    </header>
-    <div class="vehicle-input-container">
-            <form id="vehicleForm">
-                <select id="year" required>
-                    <option value="">Select Year</option>
-                </select>
-                <select id="make" required>
-                    <option value="">Select Make</option>
-                </select>
-                <select id="model" required>
-                    <option value="">Select Model</option>
-                </select>
-                <select id="trim" required>
-                    <option value="">Select Trim</option>
-                </select>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-        <script src="/js/carsqueryapi.js"></script>
+<h1>Grease Monkey</h1>
+
+<h2>Register / Login to your Account</h2>
+
+<form class="form register-form">
+  <div class="form-group">
+    <label for="email-register">Email:</label>
+    <input class="form-input" type="text" id="email-register" />
+  </div>
+  <div class="form-group">
+    <label for="password-register">Password:</label>
+    <input class="form-input" type="password" id="password-register" />
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Register</button>
+  </div>
+</form>
+
+<form class="form login-form">
+  <div class="form-group">
+    <label for="email-login">Email:</label>
+    <input class="form-input" type="text" id="email-login" />
+  </div>
+  <div class="form-group">
+    <label for="password-login">Password:</label>
+    <input class="form-input" type="password" id="password-login" />
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Login</button>
+  </div>
+</form>
+
+<script src="/js/register.js"></script>
