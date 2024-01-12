@@ -22,9 +22,10 @@ No installation necessary.
 
 The following screenshots showcase the look and feel of the Grease Monkey Maintenance Tracker:
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+
+![Screenshot_29](https://github.com/mighty-little-coder/dream_builders/assets/144749848/423e900d-86cd-483d-944a-3ab389837a67)
+
+
 
 ## Credits
 
